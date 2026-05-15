@@ -1,6 +1,53 @@
-# EduTrack - Plataforma de Seguimiento Académico
+# EduTrack - Plataforma de Seguimiento Académico (Backend)
 
-## Información del Proyecto
+Este es el repositorio del **Backend** (API) para el proyecto EduTrack del SENA. Contiene la base de los servicios requeridos según la evidencia técnica.
+
+## 🚀 Guía Rápida para el Equipo (¡Lean esto primero!)
+
+Hola equipo, aquí les dejo las instrucciones paso a paso para que puedan tener este proyecto corriendo en sus computadoras y entiendan qué se hizo. 
+
+### 1. ¿Cómo descargar y abrir el proyecto?
+1. Necesitan tener instalado **Node.js** y **Git** en sus computadoras.
+2. Abran su terminal o consola (puede ser la de VS Code) y clonen el repositorio con:
+   ```bash
+   git clone <URL_DEL_REPOSITORIO>
+   ```
+3. Abran la carpeta del proyecto en **Visual Studio Code**.
+
+### 2. 🤖 Recomendación de herramienta: Antigravity
+Les súper recomiendo instalar una extensión en VS Code llamada **Antigravity** (o herramientas de IA similares como Gemini Code Assist/Copilot). 
+- **¿Por qué?** Porque nos ayuda muchísimo a programar más rápido, nos explica código que no entendamos y hasta nos ayuda a encontrar errores. Como apenas estamos aprendiendo, es como tener un profesor al lado explicándonos línea por línea.
+
+### 3. ¿Cómo instalar todo y correr el proyecto?
+Abran una terminal dentro de la carpeta `backend` (importante, tienen que estar adentro de la carpeta `backend` porque el proyecto se separó como buena práctica) y ejecuten:
+
+```bash
+cd backend
+npm install
+npm run start:dev
+```
+*`npm install` descarga todas las dependencias.*
+*`npm run start:dev` levanta el servidor y lo deja escuchando cambios en el puerto 3000.*
+
+### 4. ¿Qué código se hizo y cómo entenderlo?
+Para cumplir con la rúbrica (Evidencia **GA6-220501123-AA2-EV01**), implementé la API con **NestJS** porque es lo más profesional y estructurado. 
+- Creé los módulos básicos: `auth` (para el login), `usuarios` (gestión) y `seguimiento` (para ver el progreso).
+- **Dejé muchos comentarios en español** en archivos como `src/usuarios/usuarios.service.ts` y `src/auth/auth.service.ts` para que vean qué hace cada función línea por línea. ¡Léanlos para no perderse!
+
+### 5. ¿Cómo probar la API en Postman?
+La evidencia pedía que se probara en Postman, así que dejé un archivo listo:
+1. Abran Postman.
+2. Den clic en **"Import"**.
+3. Busquen y seleccionen el archivo que está en la carpeta principal llamado `EduTrack.postman_collection.json`.
+4. ¡Listo! Ahí tendrán las peticiones armadas para probar el Login, Crear Usuario y Ver Seguimiento. Asegúrense de que el servidor esté corriendo (`npm run start:dev`) antes de probarlas.
+
+### 6. ¿Y la Base de Datos?
+Por el momento, **estamos usando memoria temporal (arrays)**. Esto significa que si apagan el servidor, los usuarios creados se borran. Lo hice así para cumplir rápido con esta evidencia de forma sencilla, pero **el siguiente paso será conectar una base de datos PostgreSQL** usando TypeORM. ¡Eso lo iremos haciendo poco a poco!
+
+---
+
+## 📄 Información Oficial del Proyecto (Documentación IEEE 830)
+
 **Servicio Nacional de Aprendizaje - SENA**
 **Programa:** Aplicaciones y Servicios para la Nube
 **Ficha:** 3335994
@@ -12,63 +59,31 @@
 - Rebeca Judith Rivera Mendoza
 - Oscar David Valencia Álvarez (Colaborador en informe técnico)
 
----
-
-## Introducción
-EduTrack es una plataforma diseñada para optimizar el seguimiento académico y la gestión de procesos formativos. Su objetivo principal es simplificar la recolección, el procesamiento y la visualización de datos académicos en tiempo real, permitiendo una toma de decisiones informada para aprendices, instructores y coordinadores.
-
-## Alcance del Proyecto
+### Alcance del Proyecto
 El proyecto cubrirá las siguientes funcionalidades principales:
 - Registro, consulta y gestión de información académica.
 - Acceso diferenciado por roles (Administrador, Docente/Instructor, Estudiante/Aprendiz).
 - Generación de reportes y gráficos de rendimiento.
 - Emisión de alertas automatizadas por bajo desempeño.
 - Gestión de grupos, asignaturas y periodos académicos.
-- Acceso multiplataforma (Web y Móvil).
+- Acceso multiplataforma (Web y Móvil - Frontend pendiente).
 
----
-
-## Requisitos del Sistema (IEEE 830)
-
-### Requisitos Funcionales (RF)
+### Requisitos Funcionales (RF) Principales
 | Código | Nombre | Descripción | Prioridad |
 |--------|--------|-------------|-----------|
 | RF-01 | Inicio de Sesión | Autenticación con correo y contraseña. | Alta (Must Have) |
 | RF-02 | Registro de Aprendices | Registro de nuevos aprendices asociados a una ficha. | Alta (Must Have) |
-| RF-03 | Carga de Evidencias | Subida de archivos para actividades. | Media (Could Have) |
 | RF-04 | Seguimiento Académico | Visualización del avance por competencia. | Alta (Must Have) |
-| RF-05 | Generación de Reportes | Informes descargables en PDF. | Media (Could Have) |
 | RF-06 | Panel Administrativo | Estadísticas globales para coordinadores. | Alta (Must Have) |
 
-### Requisitos No Funcionales (RNF)
-| Código | Tipo | Descripción | Prioridad |
-|--------|------|-------------|-----------|
-| RNF-01 | Seguridad | Cifrado de contraseñas (SHA-256). | Alta |
-| RNF-02 | Usabilidad | Interfaz intuitiva para usuarios no técnicos. | Media |
-| RNF-03 | Rendimiento | Carga de vistas en menos de 3 segundos. | Alta |
-| RNF-04 | Compatibilidad | Funcionamiento en Chrome, Firefox y Edge. | Media |
-| RNF-05 | Disponibilidad | Operatividad del 99% del tiempo. | Alta |
+### Requisitos No Funcionales (RNF) Principales
+- **Seguridad**: Cifrado de contraseñas (SHA-256).
+- **Rendimiento**: Carga de vistas en menos de 3 segundos.
+- **Disponibilidad**: Operatividad del 99% del tiempo.
 
----
-
-## Estructura de Trabajo (Jira)
-El proyecto se gestiona bajo metodología **Scrum** con las siguientes Épicas:
+### Estructura de Trabajo (Jira - Metodología Scrum)
 1. Gestión de Usuarios
 2. Gestión Académica
 3. Seguimiento del Aprendiz
 4. Reportes e Indicadores
 5. Panel Administrativo
-
----
-
-## Trazabilidad Inicial
-| Requisito | Historia de Usuario | Prototipo Asociado | Estado |
-|-----------|----------------------|--------------------|--------|
-| RF-01 | HU-01: Iniciar sesión | Login – Pantalla 1 | Diseñado |
-| RF-04 | HU-05: Ver mi progreso | Dashboard – Pantalla 3 | Diseñado |
-| RF-02 | HU-03: Registrar aprendiz | Gestión de aprendiz – Pantalla 2 | Diseñado |
-
----
-
-## Desarrollo Técnico
-Este repositorio contendrá la implementación de la API (Backend) y el Cliente (Frontend) de acuerdo a los lineamientos de la evidencia **GA6-220501123-AA2-EV01**.
