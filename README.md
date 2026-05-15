@@ -29,7 +29,14 @@ npm run start:dev
 *`npm install` descarga todas las dependencias.*
 *`npm run start:dev` levanta el servidor y lo deja escuchando cambios en el puerto 3000.*
 
-### 4. ¿Qué código se hizo y cómo entenderlo?
+### 4. Buenas prácticas con Git: Ramas y Pull Requests 🌳
+Si alguno desea modificar el código, agregar algo o arreglar un error **por favor no lo hagan directamente en la rama principal (`main`)**. Como buena práctica de la industria:
+1. Abran la terminal y creen una nueva rama con el nombre de lo que van a hacer: `git checkout -b nombre-de-la-tarea`.
+2. Hagan sus cambios y "commits" en esa rama.
+3. Cuando terminen, suban esa rama a GitHub (`git push origin nombre-de-la-tarea`).
+4. Vayan a GitHub y creen un **Pull Request (PR)**. Así entre todos podemos revisar el código antes de mezclarlo con la rama principal. ¡Es vital acostumbrarnos a trabajar así!
+
+### 5. ¿Qué código se hizo y cómo entenderlo?
 Para cumplir con la rúbrica (Evidencia **GA6-220501123-AA2-EV01**), implementé la API con **NestJS** porque es lo más profesional y estructurado. 
 - Creé los módulos básicos: `auth` (para el login), `usuarios` (gestión) y `seguimiento` (para ver el progreso).
 - **Dejé muchos comentarios en español** en archivos como `src/usuarios/usuarios.service.ts` y `src/auth/auth.service.ts` para que vean qué hace cada función línea por línea. ¡Léanlos para no perderse!
