@@ -64,7 +64,7 @@ Por el momento, **estamos usando memoria temporal (arrays)**. Esto significa que
 - Santiago José Barbosa Rivas
 - Emanuel Mancípe Romero
 - Rebeca Judith Rivera Mendoza
-- Oscar David Valencia Álvarez (Colaborador en informe técnico)
+- Paula Martinez(la vocerita)
 
 ### Alcance del Proyecto
 El proyecto cubrirá las siguientes funcionalidades principales:
@@ -94,3 +94,13 @@ El proyecto cubrirá las siguientes funcionalidades principales:
 3. Seguimiento del Aprendiz
 4. Reportes e Indicadores
 5. Panel Administrativo
+
+
+   <img width="1600" height="850" alt="image" src="https://github.com/user-attachments/assets/6baa9c7d-0c56-493e-bd14-c57b04175aa6" />
+   <img width="1600" height="850" alt="image" src="https://github.com/user-attachments/assets/b45dbab6-1450-4bd0-9d5e-cdcdb940f483" />
+   <img width="1600" height="850" alt="image" src="https://github.com/user-attachments/assets/70c60d68-3b87-4b0a-9f3e-993e51e316c5" />
+   <img width="1600" height="850" alt="image" src="https://github.com/user-attachments/assets/ebf0ec75-fdce-4a54-8695-e8f8b3bb6560" />
+
+
+
+
